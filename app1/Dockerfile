@@ -18,5 +18,8 @@ RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 # Habilita o mod_rewrite do Apache
 RUN a2enmod rewrite
 
+# Tcpdump para análise de tráfefo
+RUN apt-get update && apt-get install -y tcpdump
+
 # Reinicia o Apache para aplicar as alterações
 CMD ["apache2-foreground"]
